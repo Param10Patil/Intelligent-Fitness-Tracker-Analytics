@@ -102,23 +102,23 @@ This approach ensured temporal consistency and reduced computational load.
 
 1. **Repetition Patterns**   
 Accelerometer plots reveal repeating waveforms corresponding to exercise repetitions. Each peak indicates a completed movement cycle, with patterns varying across exercises.
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/participant%20A%20on%20squat.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/participant%20A%20on%20squat.png)
 
 2. **Intensity Comparison**   
 Medium-weight sets show faster repetition cycles, while heavy sets display slower and noisier signals due to increased effort.
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/heavy_vs_medium_sets_y_acc.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/heavy_vs_medium_sets_y_acc.png)
 
 3. **Participant Variability**   
 Differences across individuals highlight biomechanical variations, reinforcing the need for diverse training data.
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/participants%20in%20bench%20set%20(acc%20y).png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/participants%20in%20bench%20set%20(acc%20y).png)
 
 4. **Sensor Contribution**   
 Accelerometers capture motion magnitude, while gyroscopes capture rotational dynamics. Combining both improves prediction accuracy.
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/Bench%20(D).png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/Bench%20(D).png)
 
 5. **Rest State Analysis**   
 During rest periods, signals remain nearly flat with minimal noise.
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/Rest%20(E).png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/Rest%20(E).png)
 
 ---
 
@@ -129,8 +129,8 @@ Tested IQR, LOF, and Chauvenet’s Criterion for identifying anomalies.
 
 2. **Selected Approach**
 Chauvenet’s Criterion provided the best balance by removing noise without affecting valid motion peaks.
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/Chauvenet_ACC_x.png)
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/Chauvenet_gyr_x.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/Chauvenet_ACC_x.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/Chauvenet_gyr_x.png)
 
 3. **Handling Strategy**
 Outliers were replaced with NaN to maintain time continuity instead of removing rows.
@@ -141,24 +141,24 @@ Outliers were replaced with NaN to maintain time continuity instead of removing 
 
 1. **Interpolation**
 Missing values were filled using interpolation to preserve smooth temporal transitions.
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/sample%20with%20nan.png)
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/sample%20after%20filling%20nans.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/sample%20with%20nan.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/sample%20after%20filling%20nans.png)
 
 2. **Noise Reduction**
 Applied Butterworth low-pass filtering to remove high-frequency noise.
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/before%20and%20after%20lowpass%20filter.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/before%20and%20after%20lowpass%20filter.png)
 
 3. **Dimensionality Reduction**
 PCA reduced six sensor dimensions into three principal components.
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/elbow%20tech%20for%20PCA.png)
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/PCAs%20plot.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/elbow%20tech%20for%20PCA.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/PCAs%20plot.png)
 
 4. **Magnitude Features**
 Computed orientation-independent magnitude values.
 
 5. **Clustering**
 K-Means identified natural groupings in movement patterns.
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/elbow%20tech%20for%20KMEANS.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/elbow%20tech%20for%20KMEANS.png)
 ![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/3D%20visualization%20for%20acc%20data.png)
 
 ---
@@ -167,24 +167,24 @@ K-Means identified natural groupings in movement patterns.
 
 1. **Data Splitting**
 Used stratified 75/25 split across feature sets.
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/train%20test%20split.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/train%20test%20split.png)
 
 2. **Feature Selection**
 Forward selection identified top-performing features with minimal complexity.
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/Forward%20Feature%20Selection.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/Forward%20Feature%20Selection.png)
 
 3. **Model Comparison**
 Random Forest and Neural Networks achieved highest performance.
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/models%20accuracies.png)
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/models%20scores.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/models%20accuracies.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/models%20scores.png)
 
 **Evaluation**
 
 - Random split accuracy: 99.4%  
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/CM%20participant%20A.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/CM%20participant%20A.png)
 
 - Leave-one-subject-out: 98.6%  
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/CM%20for%20complex%20model.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/CM%20for%20complex%20model.png)
 
 ---
 
@@ -192,12 +192,12 @@ Random Forest and Neural Networks achieved highest performance.
 
 1. **Peak Detection**
 Used signal peak detection to identify repetitions.
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/medium%20dead.png)
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/heavy%20bench.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/medium%20dead.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/heavy%20bench.png)
 
 2. **Performance**
 Achieved MAE of 1.02.
-![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/reports/figures/Evaluation.png)
+![image alt](https://github.com/Param10Patil/Intelligent-Fitness-Tracker-Analytics/blob/main/reports/figures/Evaluation.png)
 
 ## **Project Conclusion**
 This pipeline successfully:
